@@ -3,7 +3,9 @@ import useAsyncEffect from 'use-async-effect';
 import useForceUpdate from 'use-force-update';
 
 export interface IntervalRerendererProps {
+  /** The duration of rerender intervals in milliseconds. */
   duration: number;
+  /** Returns the content to be rendered. */
   render: () => React.ReactNode;
 }
 
