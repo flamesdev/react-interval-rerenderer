@@ -1,0 +1,36 @@
+{
+  "name": "react-interval-rerenderer",
+  "version": "1.0.0",
+  "description": "A React component for rerendering elements at set intervals.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "keywords": [
+    "react",
+    "typescript",
+    "interval",
+    "rerenderer"
+  ],
+  "author": "flamesdev",
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flamesdev/react-interval-rerenderer.git"
+  },
+  "dependencies": {
+    "use-async-effect": "^2.2.3",
+    "use-force-update": "^1.0.7"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.5",
+    "typescript": "^4.2.4"
+  }
+}
