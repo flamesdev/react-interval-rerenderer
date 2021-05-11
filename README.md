@@ -20,3 +20,13 @@ const Time: React.FC = () => (
   <IntervalRerenderer duration={100} render={Date.now} />
 );
 ```
+
+# Props
+
+## `duration: number`
+
+The duration of rerender intervals in milliseconds.
+
+## `render: () => React.ReactNode`
+
+Returns the content to be rendered.
