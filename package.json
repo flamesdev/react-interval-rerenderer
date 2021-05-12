@@ -23,7 +23,6 @@
     "url": "git+https://github.com/flamesdev/react-interval-rerenderer.git"
   },
   "dependencies": {
-    "use-async-effect": "^2.2.3",
     "use-force-update": "^1.0.7"
   },
   "peerDependencies": {

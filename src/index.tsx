@@ -1,5 +1,4 @@
-import React from 'react';
-import useAsyncEffect from 'use-async-effect';
+import React, { memo, useEffect } from 'react';
 import useForceUpdate from 'use-force-update';
 
 export interface IntervalRerendererProps {
@@ -11,19 +10,15 @@ export interface IntervalRerendererProps {
 
 const IntervalRerenderer: React.FC<IntervalRerendererProps> = ({
   duration,
-  render,
+  render
 }) => {
   const forceUpdate = useForceUpdate();
-
-  useAsyncEffect((isMounted) =>
-    setTimeout(() => {
-      if (isMounted()) {
-        forceUpdate();
-      }
-    }, duration)
-  );
+  useEffect(() => {
+    const interval = setInterval(forceUpdate, duration);
+    return () => clearInterval(interval);
+  }, [duration]);
 
   return <>{render()}</>;
 };
 
-export default React.memo(IntervalRerenderer);
+export default memo(IntervalRerenderer);
