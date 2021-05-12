@@ -1,6 +1,6 @@
 # react-interval-rerenderer
 
-![License](https://shields.io/apm/l/react-interval-rerenderer?style=flat-square)
+![License](https://shields.io/npm/l/react-interval-rerenderer?style=flat-square)
 ![Version](https://shields.io/npm/v/react-interval-rerenderer?style=flat-square)
 ![Bundle size](https://shields.io/bundlephobia/minzip/react-interval-rerenderer?style=flat-square)
 
