@@ -17,7 +17,7 @@ Similar to [`react-interval-rerender`](https://github.com/jcoreio/react-interval
 import IntervalRerenderer from 'react-interval-rerenderer';
 
 const Time: React.FC = () => (
-  <IntervalRerenderer duration={100} render={Date.now} />
+  <IntervalRerenderer duration={1000} render={Date.now} />
 );
 ```
 
