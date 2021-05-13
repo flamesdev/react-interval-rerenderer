@@ -5,10 +5,10 @@ import IntervalRerenderer from '../index';
 
 // Interval child component
 const IntervalChildComponent: React.FC = () => {
-  const renders = useRef(0);
-  renders.current++;
+  const renderCount = useRef(0);
+  renderCount.current++;
 
-  return <p data-testid='text'>{renders.current}</p>;
+  return <p data-testid='text'>{renderCount.current}</p>;
 };
 
 // Interval test component
