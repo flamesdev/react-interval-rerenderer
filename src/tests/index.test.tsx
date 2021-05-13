@@ -34,7 +34,7 @@ test('no early rerender', () => {
   expect(screen.getByTestId('text')).toHaveTextContent('1');
 });
 
-test('repeated renders', () => {
+test('multiple renders', () => {
   render(<IntervalTestComponent />);
   act(() => jest.advanceTimersByTime(1000));
   expect(screen.getByTestId('text')).toHaveTextContent('2');
