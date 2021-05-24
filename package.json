@@ -1,6 +1,6 @@
 {
   "name": "react-interval-rerenderer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A React component for rerendering elements at set intervals.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
