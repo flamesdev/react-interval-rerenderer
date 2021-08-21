@@ -8,7 +8,7 @@ const IntervalChildComponent: React.FC = () => {
   const renderCount = useRef(0);
   renderCount.current++;
 
-  return <p data-testid='text'>{renderCount.current}</p>;
+  return <p data-testid='renderCount'>{renderCount.current}</p>;
 };
 
 // Interval test component
@@ -28,27 +28,35 @@ const IntervalTestComponent: React.FC<IntervalTestComponentProps> = ({
 // Tests
 jest.useFakeTimers();
 
+function advanceTimers(milliseconds: number) {
+  act(() => jest.advanceTimersByTime(milliseconds));
+}
+
+function expectRenderCount(count: number) {
+  expect(screen.getByTestId('renderCount')).toHaveTextContent(String(count));
+}
+
 test('no early rerender', () => {
   render(<IntervalTestComponent />);
-  act(() => jest.advanceTimersByTime(950));
-  expect(screen.getByTestId('text')).toHaveTextContent('1');
+  advanceTimers(950);
+  expectRenderCount(1);
 });
 
 test('multiple renders', () => {
   render(<IntervalTestComponent />);
-  act(() => jest.advanceTimersByTime(1000));
-  expect(screen.getByTestId('text')).toHaveTextContent('2');
+  advanceTimers(1000);
+  expectRenderCount(2);
 
-  act(() => jest.advanceTimersByTime(1200));
-  expect(screen.getByTestId('text')).toHaveTextContent('3');
+  advanceTimers(1200);
+  expectRenderCount(3);
 });
 
 test('dynamic duration', () => {
   const { rerender } = render(<IntervalTestComponent duration={500} />);
-  act(() => jest.advanceTimersByTime(560));
-  expect(screen.getByTestId('text')).toHaveTextContent('2');
+  advanceTimers(560);
+  expectRenderCount(2);
 
   rerender(<IntervalTestComponent duration={20} />);
-  act(() => jest.advanceTimersByTime(50));
-  expect(screen.getByTestId('text')).toHaveTextContent('5');
+  advanceTimers(50);
+  expectRenderCount(5);
 });
